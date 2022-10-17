@@ -1,4 +1,4 @@
-package org.training.loops;
+package org.training.loops.ifLoop;
 
 import java.util.Scanner;
 

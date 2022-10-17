@@ -1,4 +1,4 @@
-package org.training.loops;
+package org.training.loops.ifLoop;
 
 import java.util.Scanner;
 
@@ -10,6 +10,7 @@ public class TollPlaza {
         System.out.print("The charge of the toll :: ");
         long tollAmount = scanner.nextLong();
         /*if (availableBalance > tollAmount) {
+
             System.out.println("pass");
         } else if (availableBalance == tollAmount) {
             System.out.println("pass");
