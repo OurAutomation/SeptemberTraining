@@ -6,4 +6,6 @@ public interface IScientificCalculator {
     float squareRoot(int a);
 
     double square(int a);
+
+    int divide(int a, int b);
 }
