@@ -18,5 +18,10 @@ public class ArrayWithLengthPreDefined {
         System.out.println(iArr[10]);
         iArr[10]=1233444;
         System.out.println(iArr[10]);
+        System.out.println(iArr[10]);
+        System.out.println(iArr[10]);
+        System.out.println(iArr[10]);
+        System.out.println(iArr[10]);
+        System.out.println(iArr[10]);
     }
 }
