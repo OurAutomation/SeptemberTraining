@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
+import java.util.HashMap;
 
 public class ValidateLoginWithValidCredentials {
     public static void main(String[] args) throws InterruptedException {
