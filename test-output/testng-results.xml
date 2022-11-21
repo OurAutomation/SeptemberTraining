@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="11113" started-at="2022-11-21T21:52:49 IST" finished-at="2022-11-21T21:53:00 IST">
+    <groups>
+    </groups>
+    <test name="Training" duration-ms="11113" started-at="2022-11-21T21:52:49 IST" finished-at="2022-11-21T21:53:00 IST">
+      <class name="org.training.testNG.TestNGClass">
+        <test-method status="PASS" signature="openingTheBrowser()[pri:0, instance:org.training.testNG.TestNGClass@1f36e637]" name="openingTheBrowser" duration-ms="6151" started-at="2022-11-21T21:52:49 IST" finished-at="2022-11-21T21:52:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openingTheBrowser -->
+        <test-method status="PASS" signature="login()[pri:1, instance:org.training.testNG.TestNGClass@1f36e637]" name="login" duration-ms="807" started-at="2022-11-21T21:52:55 IST" finished-at="2022-11-21T21:52:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="validateIfUserIsLoggedIn()[pri:2, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateIfUserIsLoggedIn" duration-ms="166" started-at="2022-11-21T21:52:56 IST" finished-at="2022-11-21T21:52:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateIfUserIsLoggedIn -->
+        <test-method status="PASS" signature="validateElementsPresentInTheMenu()[pri:3, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateElementsPresentInTheMenu" duration-ms="2296" started-at="2022-11-21T21:52:56 IST" finished-at="2022-11-21T21:52:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateElementsPresentInTheMenu -->
+        <test-method status="PASS" signature="validateNumberOfProductsDisplayedInTheDashboardPage()[pri:4, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateNumberOfProductsDisplayedInTheDashboardPage" duration-ms="48" started-at="2022-11-21T21:52:58 IST" finished-at="2022-11-21T21:52:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateNumberOfProductsDisplayedInTheDashboardPage -->
+        <test-method status="PASS" signature="validateProductTitlesDisplayedInTheDashboardPage()[pri:5, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateProductTitlesDisplayedInTheDashboardPage" duration-ms="205" started-at="2022-11-21T21:52:58 IST" finished-at="2022-11-21T21:52:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProductTitlesDisplayedInTheDashboardPage -->
+        <test-method status="PASS" signature="validateAddToCartFunctionality()[pri:6, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateAddToCartFunctionality" duration-ms="442" started-at="2022-11-21T21:52:59 IST" finished-at="2022-11-21T21:52:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAddToCartFunctionality -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:7, instance:org.training.testNG.TestNGClass@1f36e637]" name="closeTheBrowser" duration-ms="872" started-at="2022-11-21T21:52:59 IST" finished-at="2022-11-21T21:53:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTheBrowser -->
+      </class> <!-- org.training.testNG.TestNGClass -->
+    </test> <!-- Training -->
+  </suite> <!-- Default Suite -->
+</testng-results>
