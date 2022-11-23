@@ -1,45 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="1" ignored="0" total="9" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="11113" started-at="2022-11-21T21:52:49 IST" finished-at="2022-11-21T21:53:00 IST">
+  <suite name="Default Suite" duration-ms="5409" started-at="2022-11-23T21:23:19 IST" finished-at="2022-11-23T21:23:25 IST">
     <groups>
     </groups>
-    <test name="Training" duration-ms="11113" started-at="2022-11-21T21:52:49 IST" finished-at="2022-11-21T21:53:00 IST">
-      <class name="org.training.testNG.TestNGClass">
-        <test-method status="PASS" signature="openingTheBrowser()[pri:0, instance:org.training.testNG.TestNGClass@1f36e637]" name="openingTheBrowser" duration-ms="6151" started-at="2022-11-21T21:52:49 IST" finished-at="2022-11-21T21:52:55 IST">
+    <test name="Training" duration-ms="5409" started-at="2022-11-23T21:23:19 IST" finished-at="2022-11-23T21:23:25 IST">
+      <class name="org.training.testNG.TestNGClassWithCSS">
+        <test-method status="PASS" signature="openingTheBrowser()[pri:0, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="openingTheBrowser" duration-ms="2678" started-at="2022-11-23T21:23:19 IST" finished-at="2022-11-23T21:23:22 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openingTheBrowser -->
-        <test-method status="PASS" signature="login()[pri:1, instance:org.training.testNG.TestNGClass@1f36e637]" name="login" duration-ms="807" started-at="2022-11-21T21:52:55 IST" finished-at="2022-11-21T21:52:56 IST">
+        <test-method status="PASS" signature="login()[pri:1, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="login" duration-ms="698" started-at="2022-11-23T21:23:22 IST" finished-at="2022-11-23T21:23:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="validateIfUserIsLoggedIn()[pri:2, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateIfUserIsLoggedIn" duration-ms="166" started-at="2022-11-21T21:52:56 IST" finished-at="2022-11-21T21:52:56 IST">
+        <test-method status="PASS" signature="validateIfUserIsLoggedIn()[pri:2, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="validateIfUserIsLoggedIn" duration-ms="236" started-at="2022-11-23T21:23:23 IST" finished-at="2022-11-23T21:23:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateIfUserIsLoggedIn -->
-        <test-method status="PASS" signature="validateElementsPresentInTheMenu()[pri:3, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateElementsPresentInTheMenu" duration-ms="2296" started-at="2022-11-21T21:52:56 IST" finished-at="2022-11-21T21:52:58 IST">
+        <test-method status="FAIL" signature="validateElementsPresentInTheMenu()[pri:3, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="validateElementsPresentInTheMenu" duration-ms="179" started-at="2022-11-23T21:23:23 IST" finished-at="2022-11-23T21:23:23 IST">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"link text","selector":"ABOUT"}
+  (Session info: chrome=107.0.5304.107)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-MQDT3DN', ip: '192.168.1.107', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [223a464c3dd5272b7438eff7e6bc10d9, findElement {using=link text, value=ABOUT}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\Sravan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:57752}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57752/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 223a464c3dd5272b7438eff7e6bc10d9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"ABOUT"}
+  (Session info: chrome=107.0.5304.107)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-MQDT3DN', ip: '192.168.1.107', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [223a464c3dd5272b7438eff7e6bc10d9, findElement {using=link text, value=ABOUT}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\Sravan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:57752}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57752/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 223a464c3dd5272b7438eff7e6bc10d9
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.training.testNG.TestNGClassWithCSS.validateElementsPresentInTheMenu(TestNGClassWithCSS.java:50)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateElementsPresentInTheMenu -->
-        <test-method status="PASS" signature="validateNumberOfProductsDisplayedInTheDashboardPage()[pri:4, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateNumberOfProductsDisplayedInTheDashboardPage" duration-ms="48" started-at="2022-11-21T21:52:58 IST" finished-at="2022-11-21T21:52:58 IST">
+        <test-method status="PASS" signature="validateNumberOfProductsDisplayedInTheDashboardPage()[pri:4, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="validateNumberOfProductsDisplayedInTheDashboardPage" duration-ms="29" started-at="2022-11-23T21:23:23 IST" finished-at="2022-11-23T21:23:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateNumberOfProductsDisplayedInTheDashboardPage -->
-        <test-method status="PASS" signature="validateProductTitlesDisplayedInTheDashboardPage()[pri:5, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateProductTitlesDisplayedInTheDashboardPage" duration-ms="205" started-at="2022-11-21T21:52:58 IST" finished-at="2022-11-21T21:52:59 IST">
+        <test-method status="PASS" signature="validateProductTitlesDisplayedInTheDashboardPage()[pri:5, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="validateProductTitlesDisplayedInTheDashboardPage" duration-ms="175" started-at="2022-11-23T21:23:23 IST" finished-at="2022-11-23T21:23:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateProductTitlesDisplayedInTheDashboardPage -->
-        <test-method status="PASS" signature="validateAddToCartFunctionality()[pri:6, instance:org.training.testNG.TestNGClass@1f36e637]" name="validateAddToCartFunctionality" duration-ms="442" started-at="2022-11-21T21:52:59 IST" finished-at="2022-11-21T21:52:59 IST">
+        <test-method status="PASS" signature="validateAddToCartFunctionality()[pri:6, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="validateAddToCartFunctionality" duration-ms="349" started-at="2022-11-23T21:23:23 IST" finished-at="2022-11-23T21:23:24 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateAddToCartFunctionality -->
-        <test-method status="PASS" signature="closeTheBrowser()[pri:7, instance:org.training.testNG.TestNGClass@1f36e637]" name="closeTheBrowser" duration-ms="872" started-at="2022-11-21T21:52:59 IST" finished-at="2022-11-21T21:53:00 IST">
+        <test-method status="PASS" signature="validateNumberOfAddToCartButtonsAvailable()[pri:7, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="validateNumberOfAddToCartButtonsAvailable" duration-ms="153" started-at="2022-11-23T21:23:24 IST" finished-at="2022-11-23T21:23:24 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateNumberOfAddToCartButtonsAvailable -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:29, instance:org.training.testNG.TestNGClassWithCSS@1f36e637]" name="closeTheBrowser" duration-ms="789" started-at="2022-11-23T21:23:24 IST" finished-at="2022-11-23T21:23:25 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeTheBrowser -->
-      </class> <!-- org.training.testNG.TestNGClass -->
+      </class> <!-- org.training.testNG.TestNGClassWithCSS -->
     </test> <!-- Training -->
   </suite> <!-- Default Suite -->
 </testng-results>

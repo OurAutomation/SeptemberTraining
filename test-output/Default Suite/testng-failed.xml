@@ -3,14 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
   <test thread-count="5" name="Training(failed)">
     <classes>
-      <class name="org.training.testNG.TestNGClass">
+      <class name="org.training.testNG.TestNGClassWithCSS">
         <methods>
-          <include name="login"/>
-          <include name="validateAddToCartFunctionality"/>
           <include name="validateElementsPresentInTheMenu"/>
-          <include name="validateIfUserIsLoggedIn"/>
         </methods>
-      </class> <!-- org.training.testNG.TestNGClass -->
+      </class> <!-- org.training.testNG.TestNGClassWithCSS -->
     </classes>
   </test> <!-- Training(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
