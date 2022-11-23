@@ -1,0 +1,8 @@
+id == Attribute
+class == Attribute
+name == attribute
+linktext == The complete text present on the link
+partiallinktext == The partial text present on the link
+tagname == The name of the elements
+css == These are used for ,multiple combinations with some extra options
+xpath

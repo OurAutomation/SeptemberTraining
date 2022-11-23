@@ -1,0 +1,22 @@
+CSS Types:-
+
+#item_4_title_link == It will locate the elements with attribute id equals to item_4_title_link
+[id=item_4_title_link]  == It will locate the elements with attribute id equals to item_4_title_link
+.inventory_item_name  == It will locate the elements with attribute class equals to inventory_item_name
+[href="#"]  == It will find all the elements where href attribute equals to #
+[class="inventory"]  == It will find all the elements where class attribute equals to "inventory"
+
+tagname#id.classname[attrbuteName='attributeValue']
+tagname#id.classname1.classname2[attrbuteName1='attributeValue'][attrbuteName2='attributeValue']
+
+a#inventory_sidebar_link.bm-item[href='#'] -- For single class and single attribute
+a#inventory_sidebar_link.bm-item.menu-item[href='#'][tabindex='0'] -- Multiple classes and multiple attributes
+
+#inventory_sidebar_link.bm-item == will find elements where id is 'inventory_sidebar_link' and class is 'bm-item'
+[id='inventory_sidebar_link'][class='bm-item'] == will find elements where id is 'inventory_sidebar_link' and class is 'bm-item'
+
+[id^='inventory'] == CSS for finding webelements where id starts with "inventory"
+[aria-label^="Deal: Samsung"]  ==  CSS for finding webelements where aria-label starts with "Samsung"
+[title*="and"]  == CSS for finding webelements where title contains "and"
+[title*="and"][class*='DealLink']  == CSS for webelements where title contains "and" and class contains "DealLink"
+[aria-label^="Deal: Samsung"][aria-label*="and"] == CSS for finding webelements where aria-label starts with "Samsung" and also aria-label contains "and"
