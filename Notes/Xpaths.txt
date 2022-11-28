@@ -1,0 +1,89 @@
+Absolute Xpath:- It starts always with single slash from html tag
+
+/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button
+
+Disadvantages:- Need to change the xpath if any changes happen in parent level
+
+Relative xpath:-
+
+//tagName[@attribute="value"]
+
+//button[@id="add-to-cart-sauce-labs-backpack"]
+
+//button[starts-with(@id,"add-to-cart")]
+
+//*[starts-with(@id,"add-to-cart")]
+
+//*[starts-with(@id,"add-to-cart") and @data-test="add-to-cart-sauce-labs-backpack"]
+
+//*[@class="inventory_item"]/div[3]/div[2]/div[1]/button
+
+//*[@class="inventory_item"]//button[starts-with(@id,"add-to-cart") and @data-test="add-to-cart-sauce-labs-backpack"]
+
+//*[@class="inventory_item"]//button[contains(@id,"add-to-cart") and @data-test="add-to-cart-sauce-labs-backpack"]
+
+//*[text()="About"]
+//*[starts-with(text(),"Sauce")]
+//*[contains(text(),"Back")]
+//*[text()="Pentax K-70 18-55mm Lens Kit Black, APS-C"]
+
+<input class='form-control' rel="nofollow" name='filter_search'>
+
+//input[@class='form-control' and @name='filter_search']
+//input[contains(@class,'form') and @name='filter_search']
+//*[contains(@class,'form') and @name='filter_search']
+//*[contains(@class,'control') and @name='filter_search']
+//*[contains(@name,'search') and @class='form-control']
+//*[contains(@name,'search') and contains(@class,'form')]
+//*[contains(@name,'filter') and contains(@class,'control')]
+
+
+//input[@class='form-control' and @name='filter_search'] --xpath with and operation
+//input[contains(@class,'form') and @name='filter_search'] --xpath with contains key word
+//*[contains(@class,'form') and @name='filter_search'] -- xpath without using tag name
+//*[contains(@class,'form-control') or @id='button-search']
+//*[text()='Marketplaces'] --Xpath for text
+//*[contains(text(),'Market')] --Xpath for contains text
+//*[contains(text(),'Market') or contains(text(),'Theme')] --Xpath for contains text with or operation
+//*[starts-with(text(),'Market')] --xpath for starts-with text
+//*[starts-with(@id,'button')] --xpath for start-with attribute
+
+
+Axes methods in xpath:-
+//*[text()="Pentax K-70 18-55mm Lens Kit Black, APS-C"]/parent::a
+//*[text()="Pentax K-70 18-55mm Lens Kit Black, APS-C"]/parent::*
+//*[text()="Pentax K-70 18-55mm Lens Kit Black, APS-C"]/ancestor::*[contains(@class,"s-title-instructions-style")]
+//*[text()="Pentax K-70 18-55mm Lens Kit Black, APS-C"]/ancestor::*[contains(@class,"s-title-instructions-style")]/following-sibling::div[2]
+//*[text()="Pentax K-70 18-55mm Lens Kit Black, APS-C"]/ancestor::*[contains(@class,"s-title-instructions-style")]/following-sibling::div[@class="sg-row"]
+//*[text()="Pentax K-70 18-55mm Lens Kit Black, APS-C"]/ancestor::*[contains(@class,"s-title-instructions-style")]/following-sibling::div[@class="sg-row"]//span[@class="a-price"]/span[1]
+//*[text()="Nikon Z 30 Camera Kit with 16-50mm Lens"]/ancestor::*[contains(@class,"s-title-instructions-style")]/following-sibling::div[@class="sg-row"]//span[@class="a-price"]/span[1]
+
+//*[text()="Sauce Labs Backpack"]/ancestor::div[@class="inventory_item_label"]/following-sibling::*[@class="pricebar"]/*[@class="inventory_item_price"]
+//*[text()="Sauce Labs Fleece Jacket"]/ancestor::div[@class="inventory_item_label"]/following-sibling::*[@class="pricebar"]/*[@class="inventory_item_price"]
+
+//*[contains(text(),"DSLR")]/ancestor::*[contains(@class,"s-title-instructions-style")]/following-sibling::div[@class="sg-row"]//span[@class="a-price"]/span[1]
+//*[contains(text(),"Canon")]/ancestor::*[contains(@class,"s-title-instructions-style")]/following-sibling::div[@class="sg-row"]//span[@class="a-price"]/span[1]
+
+xpath OR = //form[@id="login_form"]//*[@id="email" or @name="SubmitLogin"]
+descendant -- //section[@id='extension-category']/descendant::a[text()='All']
+Descendant without descendant keyword:- //section[@id='extension-category']//*[text()='All']
+child --//section[@id='extension-category']/child::*[@class='list-unstyled'] or //section[@id='extension-category']/*[@class='list-unstyled']
+parent -- //p[@class="submit"]/parent::div
+ancestor -- //p[@class="submit"]/ancestor::div
+following-sibling -- //p[@class="submit"]/parent::div/following-sibling::h3
+preceding-sibling -- //p[@class="submit"]/parent::div/preceding-sibling::h3
+
+//div[@class="banner"]/following-sibling::*
+//div[@class="nav"]/following-sibling::*
+//div[@class="nav"]/preceding-sibling::*
+//h3[text()="Create an account"]/ancestor::div[@class="container"]
+//h3[text()="Create an account"]/parent::*
+//h3[text()="Create an account"]/ancestor::div[1]
+
+signIn.link=xpath://*[contains(text(),"Sign in")]
+search.inputBox=xpath://input[@name="search_query"]
+xpath://input[@id="search_query_top"]
+css:#search_query_top
+id:search_query_top
+class:search_query
+tagName:input

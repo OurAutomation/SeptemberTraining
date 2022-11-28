@@ -1,0 +1,16 @@
+Tags:-
+Suite
+Test
+Class
+method
+
+Annotations:-
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
