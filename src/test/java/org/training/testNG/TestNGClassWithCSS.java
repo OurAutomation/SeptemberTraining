@@ -1,26 +1,16 @@
 package org.training.testNG;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.selenium.utils.Base;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class TestNGClassWithCSS {
-    WebDriver driver;
-
-    @Test(priority = 0)
-    public void openingTheBrowser() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
-    }
+public class TestNGClassWithCSS extends Base {
 
     @Test(priority = 1)
     public void login() {
@@ -127,11 +117,7 @@ public class TestNGClassWithCSS {
         driver.findElement(By.cssSelector("#continue-shopping")).click();
         List<WebElement> addToCartButtons = driver.findElements(By.cssSelector("button[id^='add-to-cart-']"));
         System.out.println("The number of add to cart buttons are :: " + addToCartButtons.size());
-    }
-
-    @Test(priority = 2 ^ 32 - 1)
-    public void closeTheBrowser() {
-        driver.quit();
+        driver.findElement(By.cssSelector("#remove-sauce-labs-backpack")).click();
     }
 
 }

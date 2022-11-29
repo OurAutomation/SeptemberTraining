@@ -6,21 +6,16 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.selenium.utils.Base;
+import org.testng.annotations.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class TestNGClassWithXpath {
-    WebDriver driver;
+public class TestNGClassWithXpath extends Base {
 
-    @Test(priority = 0)
-    public void openingTheBrowser() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
-    }
+
+
 
     @Test(priority = 1)
     public void login() {
@@ -38,7 +33,7 @@ public class TestNGClassWithXpath {
     public void validateIfUserIsLoggedIn() {
         boolean isMenuBarDisplayed = driver.findElement(By.xpath("//*[@id='react-burger-menu-btn']")).isDisplayed();
         System.out.println("Menus bar is displayed or not :: " + isMenuBarDisplayed);
-        boolean isProductLogoDisplayed = driver.findElement(By.cssSelector("//*[contains(@class,'title')]")).isDisplayed();
+        boolean isProductLogoDisplayed = driver.findElement(By.xpath("//*[contains(@class,'title')]")).isDisplayed();
         System.out.println("Products image is displayed or not :: " + isProductLogoDisplayed);
         boolean isCheckoutButtonDisplayed = driver.findElement(By.xpath("//*[@class='shopping_cart_link']")).isDisplayed();
         System.out.println("Checkout button is displayed or not :: " + isCheckoutButtonDisplayed);
@@ -129,9 +124,38 @@ public class TestNGClassWithXpath {
         System.out.println("The number of add to cart buttons are :: " + addToCartButtons.size());
     }
 
-    @Test(priority = 2 ^ 32 - 1)
-    public void closeTheBrowser() {
-        driver.quit();
+}
+ /*@BeforeSuite
+    public void beforeSuite() {
+        System.out.println("Before Suite");
     }
 
-}
+    @BeforeTest
+    public void beforeTest() {
+        System.out.println("Before test");
+    }
+
+    @AfterSuite
+    public void afterSuite() {
+        System.out.println("After Suite");
+    }
+
+    @AfterTest
+    public void afterTest() {
+        System.out.println("after test");
+    }
+
+    @AfterClass
+    public void afterClass() {
+        System.out.println("after class");
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        System.out.println("Before every method");
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        System.out.println("After every method");
+    }*/
