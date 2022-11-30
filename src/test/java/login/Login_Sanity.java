@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 public class Login_Sanity extends Base {
     static final String invalidCredentialsErrorMessage = "Epic sadface: Username and password do not match any user in this service";
+
     @BeforeMethod
     public void beforeMethod() {
         driver.manage().deleteAllCookies();
@@ -31,13 +32,13 @@ public class Login_Sanity extends Base {
         boolean isMenuBarDisplayed = driver.findElement(By.cssSelector("[id='react-burger-menu-btn']")).isDisplayed();
         System.out.println("Menus bar is displayed or not :: " + isMenuBarDisplayed);
 //        Assert.assertEquals(isMenuBarDisplayed,true,"");
-        Assert.assertTrue(isMenuBarDisplayed,"The menu bar is not displayed");
+        Assert.assertTrue(isMenuBarDisplayed, "The menu bar is not displayed");
         String isProductLogoString = driver.findElement(By.cssSelector(".title")).getText();
         System.out.println("Products image text :: " + isProductLogoString);
-        Assert.assertEquals(isProductLogoString,"PRODUCTS","The product logo is not displayed");
+        Assert.assertEquals(isProductLogoString, "PRODUCTS", "The product logo is not displayed");
         boolean isCheckoutButtonDisplayed = driver.findElement(By.cssSelector("[class='shopping_cart_link']")).isDisplayed();
         System.out.println("Checkout button is displayed or not :: " + isCheckoutButtonDisplayed);
-        Assert.assertTrue(isCheckoutButtonDisplayed,"The checkout button is not displayed");
+        Assert.assertTrue(isCheckoutButtonDisplayed, "The checkout button is not displayed");
     }
 
     @Test(priority = 1)
@@ -53,10 +54,10 @@ public class Login_Sanity extends Base {
         WebElement errorMessage = driver.findElement(By.tagName("h3"));
         boolean isErrorMessageDisplayed = errorMessage.isDisplayed();
         System.out.println("Error message is displayed or not :: " + isErrorMessageDisplayed);
-        Assert.assertTrue(isErrorMessageDisplayed,"The error message is not displayed");
+        Assert.assertTrue(isErrorMessageDisplayed, "The error message is not displayed");
         String errorText = errorMessage.getText();
         System.out.println(errorText);
-        Assert.assertEquals(errorText,invalidCredentialsErrorMessage,"The error message is not matching");
+        Assert.assertEquals(errorText, invalidCredentialsErrorMessage, "The error message is not matching");
         /*if(errorText.equals(invalidCredentialsErrorMessage)) {
             System.out.println("Error message text is matching");
         } else {

@@ -25,14 +25,18 @@ public class Base {
 
     @BeforeClass
     public void beforeClass() {
-        driver.manage().deleteAllCookies();
-        driver.get("https://www.saucedemo.com/");
-        driver.manage().deleteAllCookies();
+        loadApplication();
     }
 
     @AfterClass
     public void afterClass() {
 //        driver.manage().deleteAllCookies();
         driver.navigate().refresh();
+    }
+
+    public void loadApplication() {
+        driver.manage().deleteAllCookies();
+        driver.get("https://www.saucedemo.com/");
+        driver.manage().deleteAllCookies();
     }
 }
