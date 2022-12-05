@@ -16,6 +16,9 @@ public class Base {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        ObjectRepositoryUtils.loadProperties("QA");
+        TestDataUtils.loadTestData("QA");
+        EnvironmentUtils.loadEnvironmentData("QA");
     }
 
     @AfterSuite
@@ -36,7 +39,7 @@ public class Base {
 
     public void loadApplication() {
         driver.manage().deleteAllCookies();
-        driver.get("https://www.saucedemo.com/");
+        driver.get(EnvironmentUtils.getEnvironmentData("url"));
         driver.manage().deleteAllCookies();
     }
 }
