@@ -3,10 +3,7 @@ package org.selenium.utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 public class Base {
     public static WebDriver driver;
@@ -26,8 +23,8 @@ public class Base {
         driver.quit();
     }
 
-    @BeforeClass
-    public void beforeClass() {
+    @BeforeTest
+    public void beforeTest() {
         loadApplication();
     }
 

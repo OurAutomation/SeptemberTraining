@@ -11,7 +11,7 @@ public class TestDataUtils {
     static Properties properties = new Properties();
 
     public static void loadTestData(String environment) {
-        File propertyFile = new File(Constants.TESTDATA_PATH + environment + "testdata.properties");
+        File propertyFile = new File(Constants.TESTDATA_PATH + environment + File.separator + "testdata.properties");
         FileInputStream inStream = null;
         try {
             inStream = new FileInputStream(propertyFile);

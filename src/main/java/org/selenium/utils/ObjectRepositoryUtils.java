@@ -13,7 +13,7 @@ public class ObjectRepositoryUtils {
     static Properties properties = new Properties();
 
     public static void loadProperties(String environment) {
-        File propertyFile = new File(Constants.OBJECT_REPOSITORY_PATH + environment + "locator.properties");
+        File propertyFile = new File(Constants.OBJECT_REPOSITORY_PATH + environment + File.separator + "locator.properties");
         FileInputStream inStream = null;
         try {
             inStream = new FileInputStream(propertyFile);

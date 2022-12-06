@@ -8,7 +8,7 @@ public class EnvironmentUtils {
     static Properties properties = new Properties();
 
     public static void loadEnvironmentData(String environment) {
-        File propertyFile = new File(Constants.ENVIRONMENT_PATH + environment + "environment.properties");
+        File propertyFile = new File(Constants.ENVIRONMENT_PATH + environment + File.separator + "environment.properties");
         FileInputStream inStream = null;
         try {
             inStream = new FileInputStream(propertyFile);

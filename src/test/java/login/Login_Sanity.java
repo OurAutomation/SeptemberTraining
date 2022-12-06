@@ -11,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Login_Sanity extends Base {
-    static final String invalidCredentialsErrorMessage = "Epic sadface: Username and password do not match any user in this service";
 
     @BeforeMethod
     public void beforeMethod() {
@@ -58,7 +57,7 @@ public class Login_Sanity extends Base {
         Assert.assertTrue(isErrorMessageDisplayed, "The error message is not displayed");
         String errorText = errorMessage.getText();
         System.out.println(errorText);
-        Assert.assertEquals(errorText, invalidCredentialsErrorMessage, "The error message is not matching");
+        Assert.assertEquals(errorText, TestDataUtils.getTestData("invalidCredentials.errorMessage"), "The error message is not matching");
         /*if(errorText.equals(invalidCredentialsErrorMessage)) {
             System.out.println("Error message text is matching");
         } else {
