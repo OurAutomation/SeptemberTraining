@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
+import java.time.Duration;
+
 public class Base {
     public static WebDriver driver;
 
@@ -13,6 +15,7 @@ public class Base {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         ObjectRepositoryUtils.loadProperties("QA");
         TestDataUtils.loadTestData("QA");
         EnvironmentUtils.loadEnvironmentData("QA");

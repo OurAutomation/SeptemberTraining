@@ -2,7 +2,9 @@ package dashboard;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.selenium.utils.Base;
 import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.TestDataUtils;
@@ -10,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -53,8 +56,9 @@ public class Dashboard_Sanity extends Base {
 
     @Test(priority = 3)
     public void validateMenuItemsAvailable() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         driver.findElement(ObjectRepositoryUtils.getLocator("homePage.menuButton")).click();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepositoryUtils.getLocator("dashboardPage.menuItems")));
         List<String> expectedMenuItems = Arrays.asList(TestDataUtils.getTestData("dashboardPage.menuItems").split(","));
         List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.menuItems"));
         List<String> menuItems = new ArrayList<>();

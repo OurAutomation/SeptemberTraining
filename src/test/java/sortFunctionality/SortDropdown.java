@@ -1,6 +1,5 @@
 package sortFunctionality;
 
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.selenium.utils.Base;
@@ -12,6 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class SortDropdown extends Base {
@@ -58,5 +58,51 @@ public class SortDropdown extends Base {
         products.stream().forEach(e -> actualProductTitles.add(e.getText()));
         Assert.assertEquals(actualProductTitles, expectedProductsTitles, "The titles of the products are not matching");
     }
+
+    @Test(priority = 3)
+    public void validateSortZtoAFunctionality() throws InterruptedException {
+        List<String> expectedProductsTitles = Arrays.asList(TestDataUtils.getTestData("productTitlesAvailable").split(","));
+        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
+        sortDropdown.selectByIndex(1);
+        Thread.sleep(3000);
+        List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.productNames"));
+        List<String> actualProductTitles = new ArrayList<>();
+        products.stream().forEach(e -> actualProductTitles.add(e.getText()));
+        Collections.reverse(expectedProductsTitles);
+        Assert.assertEquals(actualProductTitles, expectedProductsTitles, "The titles of the products are not matching");
+    }
+
+    @Test(priority = 4)
+    public void validateSortLowToHighFunctionality() throws InterruptedException {
+        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
+        sortDropdown.selectByValue("lohi");
+        Thread.sleep(3000);
+        List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.itemPrice"));
+        List<Float> actualProductPrices = new ArrayList<>();
+        products.stream().forEach(e -> {
+            System.out.println(e.getText());
+            actualProductPrices.add(Float.parseFloat(e.getText().replace("$", "")));
+        });
+        List<Float> expectedProductPrices = new ArrayList<>();
+        expectedProductPrices.addAll(actualProductPrices);
+        Collections.sort(expectedProductPrices);
+        Assert.assertEquals(actualProductPrices, expectedProductPrices, "The prices of the products are not matching");
+    }
+
+    @Test(priority = 5)
+    public void validateSortHighToLowFunctionality() throws InterruptedException {
+        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
+        sortDropdown.selectByValue("hilo");
+        Thread.sleep(3000);
+        List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.itemPrice"));
+        List<Float> actualProductPrices = new ArrayList<>();
+        products.stream().forEach(e -> actualProductPrices.add(Float.parseFloat(e.getText().replace("$", ""))));
+        List<Float> expectedProductPrices = new ArrayList<>();
+        expectedProductPrices.addAll(actualProductPrices);
+        Collections.sort(expectedProductPrices);
+        Collections.reverse(expectedProductPrices);
+        Assert.assertEquals(actualProductPrices, expectedProductPrices, "The prices of the products are not matching");
+    }
+
 
 }
