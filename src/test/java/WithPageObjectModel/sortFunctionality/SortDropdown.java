@@ -1,4 +1,4 @@
-package sortFunctionality;
+package WithPageObjectModel.sortFunctionality;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;

@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="Application Sanity">
+          name="Sort Functionality">
         <classes>
-            <class name="application.Application_Sanity">
+            <class name="WithoutPageObjectModel.sortFunctionality.SortDropdown">
             </class>
         </classes>
     </test>

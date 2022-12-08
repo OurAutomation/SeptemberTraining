@@ -1,4 +1,4 @@
-package dashboard;
+package WithoutPageObjectModel.dashboard;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;

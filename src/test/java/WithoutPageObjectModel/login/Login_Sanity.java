@@ -1,12 +1,10 @@
-package login;
+package WithoutPageObjectModel.login;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.selenium.utils.Base;
 import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.TestDataUtils;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

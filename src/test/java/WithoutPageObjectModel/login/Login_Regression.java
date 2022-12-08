@@ -1,4 +1,4 @@
-package login;
+package WithoutPageObjectModel.login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

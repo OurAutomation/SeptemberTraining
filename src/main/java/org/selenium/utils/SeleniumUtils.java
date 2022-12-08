@@ -12,13 +12,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class SeleniumUtils {
+public class SeleniumUtils extends StringUtils {
     WebDriver driver;
     WebDriverWait wait;
+    Actions actions;
 
     public SeleniumUtils(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        actions = new Actions(driver);
     }
 
     public void waitUntilElementIsVisible(By by) {
@@ -56,23 +58,32 @@ public class SeleniumUtils {
     }
 
     public void doubleClick(By by) {
-        Actions actions = new Actions(driver);
         waitUntilElementIsVisible(by);
         scroll(by);
         actions.doubleClick(findElement(by)).perform();
     }
 
     public void rightClick(By by) {
-        Actions actions = new Actions(driver);
         waitUntilElementIsVisible(by);
         scroll(by);
         actions.contextClick(findElement(by)).perform();
+    }
+    public String getAttribute(By locator, String attributeName) {
+        return findElement(locator).getAttribute(attributeName);
+    }
+
+    public String getAttribute(WebElement element, String attributeName) {
+        return element.getAttribute(attributeName);
     }
 
     public String getText(By by) {
         waitUntilElementIsVisible(by);
         scroll(by);
         return findElement(by).getText();
+    }
+
+    public String getTextOfTheButton(By by) {
+        return getAttribute(by,"value");
     }
 
     public String getText(WebElement element) {
@@ -100,14 +111,13 @@ public class SeleniumUtils {
     }
 
     public void dragAndDrop(By source, By destination) {
-        Actions actions = new Actions(driver);
         waitUntilElementIsVisible(source);
         actions.dragAndDrop(findElement(source), findElement(destination)).perform();
     }
 
     public void mouseHover(By by) {
-        Actions actions = new Actions(driver);
         waitUntilElementIsVisible(by);
+        scroll(by);
         actions.moveToElement(findElement(by)).perform();
     }
 
@@ -137,6 +147,27 @@ public class SeleniumUtils {
         return driver.getCurrentUrl();
     }
 
+    public void navigateForward() {
+        driver.navigate().forward();
+    }
+
+    public void navigateBackward() {
+        driver.navigate().back();
+    }
+
+    public void refresh() {
+        driver.navigate().refresh();
+    }
+
+    public void navigateTo(String url) {
+        driver.navigate().to(url);
+    }
+    public void select(By by, String visibleText) {
+        waitUntilElementIsVisible(by);
+        Select select = new Select(findElement(by));
+        select.selectByVisibleText(visibleText);
+    }
+
     public String getPresentWindowHandle() {
         return driver.getWindowHandle();
     }
@@ -156,22 +187,6 @@ public class SeleniumUtils {
 
     public void openNewTab() {
         driver.switchTo().newWindow(WindowType.TAB);
-    }
-
-    public void navigateForward() {
-        driver.navigate().forward();
-    }
-
-    public void navigateBackward() {
-        driver.navigate().back();
-    }
-
-    public void refresh() {
-        driver.navigate().refresh();
-    }
-
-    public void navigateTo(String url) {
-        driver.navigate().to(url);
     }
 
     public void openNewWindow() {
@@ -196,12 +211,6 @@ public class SeleniumUtils {
 
     public void switchToDefaultContent() {
         driver.switchTo().defaultContent();
-    }
-
-    public void select(By by, String visibleText) {
-        waitUntilElementIsVisible(by);
-        Select select = new Select(findElement(by));
-        select.selectByVisibleText(visibleText);
     }
 
     public void hardWait(int seconds) {

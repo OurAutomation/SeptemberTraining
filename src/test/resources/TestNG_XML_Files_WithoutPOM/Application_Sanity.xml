@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="Dashboard Sanity">
+          name="Application Sanity">
         <classes>
-            <class name="dashboard.Dashboard_Sanity">
+            <class name="WithoutPageObjectModel.application.Application_Sanity">
             </class>
         </classes>
     </test>

@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true"
           name="Login Sanity">
         <classes>
-            <class name="login.Login_Sanity"/>
+            <class name="WithoutPageObjectModel.login.Login_Sanity"/>
         </classes>
     </test>
 </suite>

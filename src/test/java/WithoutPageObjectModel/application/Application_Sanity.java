@@ -1,4 +1,4 @@
-package application;
+package WithoutPageObjectModel.application;
 
 import org.openqa.selenium.By;
 import org.selenium.utils.Base;
