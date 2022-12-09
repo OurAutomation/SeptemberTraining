@@ -139,6 +139,14 @@ public class SeleniumUtils extends StringUtils {
         return null;
     }
 
+    public int getSize(By locator) {
+        try {
+         return   findElements(locator).size();
+        }catch (Exception e) {
+            return 0;
+        }
+    }
+
     public String getTitle() {
         return driver.getTitle();
     }
@@ -166,6 +174,12 @@ public class SeleniumUtils extends StringUtils {
         waitUntilElementIsVisible(by);
         Select select = new Select(findElement(by));
         select.selectByVisibleText(visibleText);
+    }
+
+    public String getSelectedOption(By by) {
+        waitUntilElementIsVisible(by);
+        Select select = new Select(findElement(by));
+        return select.getFirstSelectedOption().getText();
     }
 
     public String getPresentWindowHandle() {

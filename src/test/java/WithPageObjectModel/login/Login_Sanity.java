@@ -7,13 +7,14 @@ import org.selenium.utils.TestDataUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Login_Sanity extends Base {
     LoginPage loginPage;
     DashboardPage dashboardPage;
 
-    @BeforeClass
+    @BeforeTest
     public void init() {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);

@@ -7,6 +7,7 @@ import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.TestDataUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ import java.util.List;
 
 public class SortDropdown extends Base {
 
-    @BeforeClass
-    public void beforeClass() {
+    @BeforeTest
+    public void beforeTest() {
         WebElement element = driver.findElement(ObjectRepositoryUtils.getLocator("loginPage.usernameInputBox"));
         element.click();
         element.sendKeys(TestDataUtils.getTestData("valid.username"));

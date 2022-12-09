@@ -8,33 +8,27 @@ import org.testng.annotations.*;
 import java.time.Duration;
 
 public class Base {
-    public static WebDriver driver;
+    public WebDriver driver;
 
     @BeforeSuite
     public void beforeSuite() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         ObjectRepositoryUtils.loadProperties("QA");
         TestDataUtils.loadTestData("QA");
         EnvironmentUtils.loadEnvironmentData("QA");
     }
 
-    @AfterSuite
+    @AfterTest
     public void afterSuite() {
         driver.quit();
     }
 
     @BeforeTest
     public void beforeTest() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         loadApplication();
-    }
-
-    @AfterClass
-    public void afterClass() {
-//        driver.manage().deleteAllCookies();
-        driver.navigate().refresh();
     }
 
     public void loadApplication() {

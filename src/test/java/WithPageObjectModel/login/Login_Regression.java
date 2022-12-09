@@ -7,17 +7,14 @@ import org.selenium.utils.Base;
 import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.TestDataUtils;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 public class Login_Regression extends Base {
     LoginPage loginPage;
     DashboardPage dashboardPage;
 
-    @BeforeClass
+    @BeforeTest
     public void init() {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
