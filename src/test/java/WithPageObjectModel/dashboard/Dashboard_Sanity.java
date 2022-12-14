@@ -34,6 +34,7 @@ public class Dashboard_Sanity extends Base {
         dashboardPage = new DashboardPage(driver);
         sortPage = new SortPage(driver);
         checkoutPage = new CheckoutPage(driver);
+        loadApplication();
     }
 
     @Test(priority = -1)
