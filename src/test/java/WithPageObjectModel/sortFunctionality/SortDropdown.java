@@ -1,12 +1,14 @@
 package WithPageObjectModel.sortFunctionality;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import org.selenium.pageObjects.CheckoutPage;
+import org.selenium.pageObjects.DashboardPage;
+import org.selenium.pageObjects.LoginPage;
+import org.selenium.pageObjects.SortPage;
 import org.selenium.utils.Base;
 import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.TestDataUtils;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,68 +19,59 @@ import java.util.List;
 
 public class SortDropdown extends Base {
 
-    @BeforeTest
-    public void beforeTest() {
-        WebElement element = driver.findElement(ObjectRepositoryUtils.getLocator("loginPage.usernameInputBox"));
-        element.click();
-        element.sendKeys(TestDataUtils.getTestData("valid.username"));
-        element = driver.findElement(ObjectRepositoryUtils.getLocator("loginPage.passwordInputBox"));
-        element.click();
-        element.sendKeys(TestDataUtils.getTestData("password"));
-        element = driver.findElement(ObjectRepositoryUtils.getLocator("loginPage.submitButton"));
-        element.click();
+    LoginPage loginPage;
+    DashboardPage dashboardPage;
+    SortPage sortPage;
+    CheckoutPage checkoutPage;
+
+    @BeforeTest(alwaysRun = true)
+    public void init() {
+        loginPage = new LoginPage(driver);
+        dashboardPage = new DashboardPage(driver);
+        sortPage = new SortPage(driver);
+        checkoutPage = new CheckoutPage(driver);
     }
 
-    @Test(priority = 0)
-    public void validateTheDefaultsortSelected() {
-        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
-        String selectedOptionText = sortDropdown.getFirstSelectedOption().getText();
-        Assert.assertEquals(selectedOptionText, TestDataUtils.getTestData("sortText.AtoZ"), "The default sort selected is not Name (A to Z)");
+    @Test(priority = -1, groups = {"sanity", "regression"})
+    public void login() {
+        loginPage.loginToTheApplication(TestDataUtils.getTestData("valid.username"),
+                TestDataUtils.getTestData("password"));
+//                "test");
+        Assert.assertTrue(loginPage.isUserLoggedIn(), "User is not logged in");
+
     }
 
-    @Test(priority = 1)
+    @Test(priority = 0, groups = {"sanity", "regression"}, dependsOnMethods = "login")
+    public void validateTheDefaultSortSelected() {
+        Assert.assertEquals(sortPage.getSelectedSortOption(), TestDataUtils.getTestData("sortText.AtoZ"), "The default sort selected is not Name (A to Z)");
+    }
+
+    @Test(priority = 1, groups = {"sanity", "regression"}, dependsOnMethods = "login")
     public void validateNumberOfSortsAvailable() {
-        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
-        List<WebElement> options = sortDropdown.getOptions();
         List<String> expectedSorts = Arrays.asList(TestDataUtils.getTestData("dashboardPage.sortOptionsAvailable").split(","));
-        List<String> actualSorts = new ArrayList<>();
-        options.stream().forEach(e -> actualSorts.add(e.getText()));
+        List<String> actualSorts = sortPage.getNumberOfSortsAvailable();
         Assert.assertEquals(actualSorts, expectedSorts, "The sorts are not matching");
     }
 
-    @Test(priority = 2)
-    public void validateSortAtoZFunctionality() throws InterruptedException {
+    @Test(priority = 2, groups = {"sanity", "regression"}, dependsOnMethods = "login")
+    public void validateSortAtoZFunctionality() {
         List<String> expectedProductsTitles = Arrays.asList(TestDataUtils.getTestData("productTitlesAvailable").split(","));
-        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
-        sortDropdown.selectByIndex(2);
-        Thread.sleep(3000);
-        sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
-        sortDropdown.selectByVisibleText(TestDataUtils.getTestData("sortText.AtoZ"));
-        List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.productNames"));
-        List<String> actualProductTitles = new ArrayList<>();
-        products.stream().forEach(e -> actualProductTitles.add(e.getText()));
-        Assert.assertEquals(actualProductTitles, expectedProductsTitles, "The titles of the products are not matching");
+        sortPage.selectTheGivenSortByVisibleText(TestDataUtils.getTestData("sortText.AtoZ"));
+        Assert.assertEquals(dashboardPage.getProductTitlesAvailable(), expectedProductsTitles, "The titles of the products are not matching");
     }
 
-    @Test(priority = 3)
-    public void validateSortZtoAFunctionality() throws InterruptedException {
+    @Test(priority = 3, groups = {"regression"}, dependsOnMethods = "login",enabled = true)
+    public void validateSortZtoAFunctionality() {
         List<String> expectedProductsTitles = Arrays.asList(TestDataUtils.getTestData("productTitlesAvailable").split(","));
-        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
-        sortDropdown.selectByIndex(1);
-        Thread.sleep(3000);
-        List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.productNames"));
-        List<String> actualProductTitles = new ArrayList<>();
-        products.stream().forEach(e -> actualProductTitles.add(e.getText()));
+        sortPage.selectTheGivenSortByVisibleText(TestDataUtils.getTestData("sortText.ZtoA"));
         Collections.reverse(expectedProductsTitles);
-        Assert.assertEquals(actualProductTitles, expectedProductsTitles, "The titles of the products are not matching");
+        Assert.assertEquals(dashboardPage.getProductTitlesAvailable(), expectedProductsTitles, "The titles of the products are not matching");
     }
 
-    @Test(priority = 4)
-    public void validateSortLowToHighFunctionality() throws InterruptedException {
-        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
-        sortDropdown.selectByValue("lohi");
-        Thread.sleep(3000);
-        List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.itemPrice"));
+    @Test(priority = 4, groups = {"regression"}, dependsOnMethods = "login")
+    public void validateSortLowToHighFunctionality() {
+        sortPage.selectTheGivenSortByVisibleText(TestDataUtils.getTestData("sortText.PriceLowToHigh"));
+        List<WebElement> products = sortPage.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.itemPrice"));
         List<Float> actualProductPrices = new ArrayList<>();
         products.stream().forEach(e -> {
             System.out.println(e.getText());
@@ -90,12 +83,10 @@ public class SortDropdown extends Base {
         Assert.assertEquals(actualProductPrices, expectedProductPrices, "The prices of the products are not matching");
     }
 
-    @Test(priority = 5)
-    public void validateSortHighToLowFunctionality() throws InterruptedException {
-        Select sortDropdown = new Select(driver.findElement(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown")));
-        sortDropdown.selectByValue("hilo");
-        Thread.sleep(3000);
-        List<WebElement> products = driver.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.itemPrice"));
+    @Test(priority = 5, groups = {"regression"}, dependsOnMethods = "login")
+    public void validateSortHighToLowFunctionality() {
+        sortPage.selectTheGivenSortByVisibleText(TestDataUtils.getTestData("sortText.PriceHighToLow"));
+        List<WebElement> products = sortPage.findElements(ObjectRepositoryUtils.getLocator("dashboardPage.itemPrice"));
         List<Float> actualProductPrices = new ArrayList<>();
         products.stream().forEach(e -> actualProductPrices.add(Float.parseFloat(e.getText().replace("$", ""))));
         List<Float> expectedProductPrices = new ArrayList<>();
@@ -104,6 +95,5 @@ public class SortDropdown extends Base {
         Collections.reverse(expectedProductPrices);
         Assert.assertEquals(actualProductPrices, expectedProductPrices, "The prices of the products are not matching");
     }
-
 
 }

@@ -29,7 +29,7 @@ public class Dashboard_Sanity extends Base {
     CheckoutPage checkoutPage;
 
     @BeforeTest
-    public void beforeTest() {
+    public void init() {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
         sortPage = new SortPage(driver);

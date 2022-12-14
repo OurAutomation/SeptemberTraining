@@ -1,0 +1,6 @@
+21:38:06 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Sravan\AppData\Local\JetBrains\IdeaIC2021.3\temp-testng-customsuite.xml
+
+21:38:06 INFO  LoggerTest - This is a info log
+21:38:06 WARN  LoggerTest - This is a warn log
+21:38:06 ERROR LoggerTest - This is a error log

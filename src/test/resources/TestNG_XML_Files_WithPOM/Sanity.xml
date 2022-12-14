@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests" thread-count="3">
+<suite name="All Test Suite" parallel="tests" thread-count="4">
     <test verbose="2" preserve-order="true"
           name="Login Sanity">
         <classes>
             <class name="WithPageObjectModel.login.Login_Sanity"/>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true"
+    <!--<test verbose="2" preserve-order="true"
           name="Login Regression">
         <classes>
             <class name="WithPageObjectModel.login.Login_Regression"/>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true"
+          name="Sort Functionality">
+        <classes>
+            <class name="WithPageObjectModel.sortFunctionality.SortDropdown"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="Dashboard sanity">
+        <classes>
+            <class name="WithPageObjectModel.dashboard.Dashboard_Sanity"/>
+        </classes>
+    </test>-->
 </suite>

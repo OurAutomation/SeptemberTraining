@@ -10,7 +10,8 @@ import java.time.Duration;
 public class Base {
     public WebDriver driver;
 
-    @BeforeSuite
+//    @BeforeSuite(groups = {"sanity","regression","smoke"})
+    @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
         WebDriverManager.chromedriver().setup();
         ObjectRepositoryUtils.loadProperties("QA");
@@ -18,16 +19,16 @@ public class Base {
         EnvironmentUtils.loadEnvironmentData("QA");
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void afterSuite() {
         driver.quit();
     }
 
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void beforeTest() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         loadApplication();
     }
 

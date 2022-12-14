@@ -1,0 +1,27 @@
+21:32:04.071 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\Sravan\AppData\Local\JetBrains\IdeaIC2021.3\temp-testng-customsuite.xml"
+21:32:04.558 [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE LoggerTest.loggerTest()[pri:0, instance:WithPageObjectModel.LoggerTest@7364985f] 424039015
+21:32:04.559 [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+21:32:04.566 [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+21:32:04.566 [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+21:32:04.566 [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+21:32:04.574 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Sravan\AppData\Local\JetBrains\IdeaIC2021.3\temp-testng-customsuite.xml
+
+21:32:04.649 [main] TRACE LoggerTest - This is a trace log
+21:32:04.649 [main] DEBUG LoggerTest - This is a debug log
+21:32:04.649 [main] INFO  LoggerTest - This is a info log
+21:32:04.650 [main] WARN  LoggerTest - This is a warn log
+21:32:04.650 [main] ERROR LoggerTest - This is a error log
+21:32:24.333 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\Sravan\AppData\Local\JetBrains\IdeaIC2021.3\temp-testng-customsuite.xml"
+21:32:25.710 [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE LoggerTest.loggerTest()[pri:0, instance:WithPageObjectModel.LoggerTest@7364985f] 424039015
+21:32:25.711 [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+21:32:25.719 [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+21:32:25.720 [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+21:32:25.720 [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+21:32:25.739 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Sravan\AppData\Local\JetBrains\IdeaIC2021.3\temp-testng-customsuite.xml
+
+21:32:25.908 [main] DEBUG LoggerTest - This is a debug log
+21:32:25.908 [main] INFO  LoggerTest - This is a info log
+21:32:25.908 [main] WARN  LoggerTest - This is a warn log
+21:32:25.909 [main] ERROR LoggerTest - This is a error log
