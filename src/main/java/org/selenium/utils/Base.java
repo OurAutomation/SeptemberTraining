@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class Base {
-    public WebDriver driver;
+    public static WebDriver driver;
 
     //    @BeforeSuite(groups = {"sanity","regression","smoke"})
     @BeforeSuite(alwaysRun = true)

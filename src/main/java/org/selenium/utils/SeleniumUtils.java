@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
+import java.sql.Time;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -189,8 +190,9 @@ public class SeleniumUtils extends StringUtils {
 
     public boolean isDisplayed(By by) {
         try {
-            return findElement(by).isDisplayed();
+            return driver.findElement(by).isDisplayed();
         } catch (NoSuchElementException e) {
+            e.printStackTrace();
             log.info("Element with locator :: " + by + " is not displayed");
             return false;
         } catch (Exception e ) {

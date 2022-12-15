@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+<!--<suite name="All Test Suite" parallel="tests" thread-count="4">-->
     <parameter name="environment" value="QA"/>
     <parameter name="browser" value="chrome"/>
     <listeners>
         <listener class-name="org.selenium.listeners.ReportGenerator"></listener>
+        <listener class-name="org.selenium.listeners.AnnotationTransformer"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
-          name="Sort Functionality">
-        <groups>
-            <run>
-                <include name="sanity"/>
-<!--                <include name="regression"/>-->
-            </run>
-        </groups>
+          name="Login Sanity">
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="WithPageObjectModel.sortFunctionality.SortDropdown"/>
+            <class name="general.Login_Sanity"/>
         </classes>
     </test>
 </suite>
