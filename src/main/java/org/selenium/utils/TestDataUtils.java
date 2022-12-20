@@ -1,10 +1,7 @@
 package org.selenium.utils;
 
-import org.openqa.selenium.By;
-
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Locale;
 import java.util.Properties;
 
 public class TestDataUtils {

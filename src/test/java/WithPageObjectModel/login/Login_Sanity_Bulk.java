@@ -24,7 +24,7 @@ public class Login_Sanity_Bulk extends Base {
         loadApplication();
     }
 
-    @Test(priority = 0,invocationCount = 15)
+    @Test(priority = 0, invocationCount = 15)
     public void loginWithValidCredentials() {
         loginPage.loginToTheApplication(TestDataUtils.getTestData("valid.username"),
                 TestDataUtils.getTestData("password"));

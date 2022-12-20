@@ -1,16 +1,15 @@
 package WithPageObjectModel.login;
 
-import org.openqa.selenium.WebElement;
 import org.selenium.pageObjects.DashboardPage;
 import org.selenium.pageObjects.LoginPage;
 import org.selenium.utils.Base;
 import org.selenium.utils.DataProvidersUtils;
-import org.selenium.utils.ObjectRepositoryUtils;
-import org.selenium.utils.TestDataUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class Login_Regression extends Base {
@@ -48,27 +47,27 @@ public class Login_Regression extends Base {
         log.info("******************** Completed testing is password getting masked ********************");
     }
 
-    @Test(priority = 2, dataProvider = "validUsernames", dataProviderClass = DataProvidersUtils.class,description = "I am validating login functionality for all valid usernames")
+    @Test(priority = 2, dataProvider = "validUsernames", dataProviderClass = DataProvidersUtils.class, description = "I am validating login functionality for all valid usernames")
     public void validateLoginForValidData(String username, String password) throws InterruptedException {
-        log.info("******************** Started testing validate login for valid data. username :: "+username+" and password :: "+password+" ********************");
+        log.info("******************** Started testing validate login for valid data. username :: " + username + " and password :: " + password + " ********************");
         SoftAssert softAssert = new SoftAssert();
         loginPage.loginToTheApplication(username, password);
         softAssert.assertTrue(loginPage.isUserLoggedIn(), "The menu bar is not displayed");
         softAssert.assertTrue(dashboardPage.isProductLogoDisplayed(), "The product logo is not displayed");
         softAssert.assertTrue(dashboardPage.isCheckoutIconDisplayed(), "The checkout button is not displayed");
         softAssert.assertAll();
-        log.info("******************** completed testing validate login for valid data. username :: "+username+" and password :: "+password+" ********************");
+        log.info("******************** completed testing validate login for valid data. username :: " + username + " and password :: " + password + " ********************");
     }
 
-    @Test(priority = 3, dataProvider = "inValidUsernamesOrPasswords", dataProviderClass = DataProvidersUtils.class,description = "I am validating login functionality for all invalid data")
+    @Test(priority = 3, dataProvider = "inValidUsernamesOrPasswords", dataProviderClass = DataProvidersUtils.class, description = "I am validating login functionality for all invalid data")
     public void validateLoginForInValidData(String username, String password, String expectedErrorMessage) throws InterruptedException {
-        log.info("******************** completed testing validate login for invalid valid data. username :: "+username+" and password :: "+password+" ********************");
+        log.info("******************** completed testing validate login for invalid valid data. username :: " + username + " and password :: " + password + " ********************");
         SoftAssert softAssert = new SoftAssert();
         loginPage.loginToTheApplication(username, password);
         String errorText = loginPage.getTheErrorMessage();
         log.info(errorText);
         softAssert.assertEquals(errorText, expectedErrorMessage, "The error message is not matching");
         softAssert.assertAll();
-        log.info("******************** completed testing validate login for invalid data username :: "+username+" and password :: "+password+" ********************");
+        log.info("******************** completed testing validate login for invalid data username :: " + username + " and password :: " + password + " ********************");
     }
 }

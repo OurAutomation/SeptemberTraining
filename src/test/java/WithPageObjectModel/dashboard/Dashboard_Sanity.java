@@ -1,24 +1,15 @@
 package WithPageObjectModel.dashboard;
 
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.selenium.pageObjects.CheckoutPage;
 import org.selenium.pageObjects.DashboardPage;
 import org.selenium.pageObjects.LoginPage;
 import org.selenium.pageObjects.SortPage;
 import org.selenium.utils.Base;
-import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.TestDataUtils;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

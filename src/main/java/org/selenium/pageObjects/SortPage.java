@@ -1,7 +1,6 @@
 package org.selenium.pageObjects;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.SeleniumUtils;
@@ -27,7 +26,7 @@ public class SortPage extends SeleniumUtils {
     }
 
     public void selectTheGivenSortByVisibleText(String sortType) {
-        select(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown"),sortType);
+        select(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown"), sortType);
         hardWait(2);
     }
 }

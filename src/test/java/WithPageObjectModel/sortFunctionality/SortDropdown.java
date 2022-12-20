@@ -61,7 +61,7 @@ public class SortDropdown extends Base {
         Assert.assertEquals(dashboardPage.getProductTitlesAvailable(), expectedProductsTitles, "The titles of the products are not matching");
     }
 
-    @Test(priority = 3, groups = {"regression"}, dependsOnMethods = "login",enabled = true)
+    @Test(priority = 3, groups = {"regression"}, dependsOnMethods = "login", enabled = true)
     public void validateSortZtoAFunctionality() {
         List<String> expectedProductsTitles = Arrays.asList(TestDataUtils.getTestData("productTitlesAvailable").split(","));
         sortPage.selectTheGivenSortByVisibleText(TestDataUtils.getTestData("sortText.ZtoA"));

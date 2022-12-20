@@ -2,21 +2,20 @@ package org.selenium.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.selenium.utils.ObjectRepositoryUtils;
 import org.selenium.utils.SeleniumUtils;
 import org.selenium.utils.TestDataUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DashboardPage extends SeleniumUtils {
+    Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
     public DashboardPage(WebDriver driver) {
         super(driver);
     }
-    Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     public boolean isProductLogoDisplayed() {
         String text = getText(ObjectRepositoryUtils.getLocator("homePage.logo"));
@@ -63,7 +62,7 @@ public class DashboardPage extends SeleniumUtils {
     public void addProductToCheckout(String productName) {
         String xpath = "//*[text()='${PRODUCT}']/ancestor::div[@class='inventory_item_label']/following-sibling::div[@class='pricebar']//button";
         log.info("Clicking on add to cart button of the product with xpath :: " + xpath);
-        click(By.xpath(xpath.replace("${PRODUCT}",productName)));
+        click(By.xpath(xpath.replace("${PRODUCT}", productName)));
     }
 
     public String getNumberOfProductsAdded() {
@@ -74,7 +73,7 @@ public class DashboardPage extends SeleniumUtils {
 
     public void clickOnShoppingCartIcon() {
         log.info("Clicking on shopping cart link");
-       click(ObjectRepositoryUtils.getLocator("dashboardPage.shoppingCartLink"));
+        click(ObjectRepositoryUtils.getLocator("dashboardPage.shoppingCartLink"));
     }
 
     public boolean isAddToCartButtonDisplayedForGivenProductName(String productName) {

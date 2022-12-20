@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
-import java.sql.Time;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +49,9 @@ public class SeleniumUtils extends StringUtils {
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
             scroll(by);
             element.click();
-        } catch (StaleElementReferenceException e){
+        } catch (StaleElementReferenceException e) {
             wait.until(ExpectedConditions.elementToBeClickable(by)).click();
-        } catch(Exception e) {
+        } catch (Exception e) {
             log.error("Unable to click on element due to :: " + e.getMessage() + " with locator " + by);
             Assert.fail("Unable to click on element due to :: " + e.getMessage() + " with locator " + by);
         }
@@ -197,9 +196,9 @@ public class SeleniumUtils extends StringUtils {
             e.printStackTrace();
             log.info("Element with locator :: " + by + " is not displayed");
             return false;
-        } catch (Exception e ) {
-            log.error("Unable to verify Element with locator :: " + by + " is displayed or not due to :: "+ e.getMessage());
-            Assert.fail("Unable to verify Element with locator :: " + by + " is displayed or not due to :: "+ e.getMessage());
+        } catch (Exception e) {
+            log.error("Unable to verify Element with locator :: " + by + " is displayed or not due to :: " + e.getMessage());
+            Assert.fail("Unable to verify Element with locator :: " + by + " is displayed or not due to :: " + e.getMessage());
         }
         return false;
     }

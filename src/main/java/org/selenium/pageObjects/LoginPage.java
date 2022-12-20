@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class LoginPage extends SeleniumUtils {
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -51,7 +52,7 @@ public class LoginPage extends SeleniumUtils {
     }
 
     public boolean isPasswordGettingMasked() {
-        return doesBothTheTextsMatches(getAttribute(ObjectRepositoryUtils.getLocator("loginPage.passwordInputBox"),"type"),"password");
+        return doesBothTheTextsMatches(getAttribute(ObjectRepositoryUtils.getLocator("loginPage.passwordInputBox"), "type"), "password");
     }
 
 }

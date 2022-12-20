@@ -5,7 +5,6 @@ import org.selenium.pageObjects.LoginPage;
 import org.selenium.utils.Base;
 import org.selenium.utils.TestDataUtils;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

@@ -14,14 +14,13 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
 import java.time.Duration;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
-import java.util.logging.LogManager;
 
 public class Base {
     public static WebDriver driver;
     public Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
     //    @BeforeSuite(groups = {"sanity","regression","smoke"})
     @BeforeSuite(alwaysRun = true)
     @Parameters(value = {"environment", "browser"})
@@ -81,7 +80,7 @@ public class Base {
                 chromeOptions.addArguments("-test-type");
                 // To open the browser in incognito mode
                 chromeOptions.addArguments("--disable-notifications");
-                 chromeOptions.addArguments("--incognito");
+                chromeOptions.addArguments("--incognito");
                 // openbrowser maximized state
                 chromeOptions.addArguments("start-maximized");
                 // Always allow the authorized plugins

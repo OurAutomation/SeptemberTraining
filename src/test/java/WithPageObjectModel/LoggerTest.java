@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 public class LoggerTest {
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
     @Test
     public void loggerTest() {
         log.trace("This is a trace log");

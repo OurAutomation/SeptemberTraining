@@ -1,11 +1,9 @@
 package org.selenium.utils;
 
 import org.openqa.selenium.By;
-import org.training.io_operations.FileUtilsData;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Locale;
 import java.util.Properties;
 

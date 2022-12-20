@@ -26,6 +26,6 @@ public class Application_Sanity extends Base {
     public void validateTheLogoOfThePage() {
         String logoURL = driver.findElement(By.className("login_logo")).getCssValue("background");
         System.out.println("Logo url is :: " + logoURL);
-        Assert.assertEquals(logoURL,EnvironmentUtils.getEnvironmentData("logo.url"),"The logo url is not matching");
+        Assert.assertEquals(logoURL, EnvironmentUtils.getEnvironmentData("logo.url"), "The logo url is not matching");
     }
 }
