@@ -1,0 +1,9 @@
+// Runtime exceptions (or) selenium exceptions
+org.openqa.selenium.NoSuchElementException: If the locator given is not present in the DOM then it will throw this exception
+org.openqa.selenium.StaleElementReferenceException: If we find an element and after that if the page is refreshed and using the previous reference if oyu do any action then this exception will be thrown
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 106. When your chrome driver version is outdated this exception will be thrown
+org.openqa.selenium.NoSuchWindowException: no such window :  When wrong window handle is passed or the passed window handle is already closed. then this exception will be thrown
+org.openqa.selenium.NoSuchFrameException: No frame element : When you are trying to swich to wrong frame then this exception will be thrown
+org.openqa.selenium.ElementNotInteractableException: element not interactable : This exception will be thrown when the element is not interactable. Possible cause may be loading symbol is displayed or overlay is present or navigation is not proper or try to write locator for parent element and check
+org.openqa.selenium.InvalidSelectorException: invalid selector: When the syntax of the xpath or css is wrong or the locator is wrongly mpped this exception will be thrown
+org.openqa.selenium.TimeoutException: Expected condition failed: This occurs when webdriver wait (Explicit wait) condition fails this exception will be thrown
