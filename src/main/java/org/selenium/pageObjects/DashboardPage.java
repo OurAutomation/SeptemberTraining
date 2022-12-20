@@ -91,4 +91,16 @@ public class DashboardPage extends SeleniumUtils {
         log.info("Is remove from the cart button displayed or not :: " + displayed);
         return displayed;
     }
+
+    public void clickOnTwitterIcon() {
+        click(ObjectRepositoryUtils.getLocator("dashboardPage.twitterIcon"));
+    }
+
+    public void clickOnFacebookIcon() {
+        click(ObjectRepositoryUtils.getLocator("dashboardPage.facebookIcon"));
+    }
+
+    public void clickOnLinkedInIcon() {
+        click(ObjectRepositoryUtils.getLocator("dashboardPage.linkedInIcon"));
+    }
 }

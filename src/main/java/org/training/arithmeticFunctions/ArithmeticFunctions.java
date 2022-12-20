@@ -28,19 +28,19 @@ public class ArithmeticFunctions {
         System.out.println("Hello World !!!");
     }
 //public,private,protected,default
-    public static void add(int i, int j) {
-        System.out.println(i+j);
+    public static int add(int i, int j) {
+        return i+j;
     }
 
-    public void subtract(int i, int j) {
+    public static void subtract(int i, int j) {
         System.out.println(i-j);
     }
 
-    public void multiply(int i, int j) {
+    public static void multiply(int i, int j) {
         System.out.println(i*j);
     }
 
-    public void divide(int i,int j) {
+    public static void divide(int i,int j) {
         System.out.println(i/j);
     }
 }

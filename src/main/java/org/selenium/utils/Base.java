@@ -9,16 +9,19 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.safari.SafariDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
 import java.time.Duration;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.logging.LogManager;
 
 public class Base {
     public static WebDriver driver;
-
+    public Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
     //    @BeforeSuite(groups = {"sanity","regression","smoke"})
     @BeforeSuite(alwaysRun = true)
     @Parameters(value = {"environment", "browser"})
@@ -30,7 +33,7 @@ public class Base {
 
     @Parameters(value = {"browser"})
     @BeforeTest(alwaysRun = true)
-    public void launchDriver(String browser) {
+    public void launchDriver(@Optional("chrome") String browser) {
         switch (browser.toLowerCase(Locale.ROOT)) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();

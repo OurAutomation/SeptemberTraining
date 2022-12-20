@@ -50,7 +50,9 @@ public class SeleniumUtils extends StringUtils {
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
             scroll(by);
             element.click();
-        } catch (Exception e) {
+        } catch (StaleElementReferenceException e){
+            wait.until(ExpectedConditions.elementToBeClickable(by)).click();
+        } catch(Exception e) {
             log.error("Unable to click on element due to :: " + e.getMessage() + " with locator " + by);
             Assert.fail("Unable to click on element due to :: " + e.getMessage() + " with locator " + by);
         }
@@ -315,6 +317,10 @@ public class SeleniumUtils extends StringUtils {
 
     public void switchToFrame(WebElement element) {
         driver.switchTo().frame(element);
+    }
+
+    public void switchToParentFrame() {
+        driver.switchTo().parentFrame();
     }
 
     public void switchToDefaultContent() {
