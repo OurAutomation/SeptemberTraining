@@ -9,10 +9,6 @@ import org.slf4j.LoggerFactory;
 public class CheckoutPage extends SeleniumUtils {
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    public CheckoutPage(WebDriver driver) {
-        super(driver);
-    }
-
     public String getTheProductNameAdded() {
         log.info("Getting the first product names");
         String text = getText(ObjectRepositoryUtils.getLocator("dashboardPage.productNames"));

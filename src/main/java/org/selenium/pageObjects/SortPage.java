@@ -8,9 +8,6 @@ import org.selenium.utils.SeleniumUtils;
 import java.util.List;
 
 public class SortPage extends SeleniumUtils {
-    public SortPage(WebDriver driver) {
-        super(driver);
-    }
 
     public void selectSort(String sortName) {
         select(ObjectRepositoryUtils.getLocator("dashboardPage.sortDropdown"), sortName);

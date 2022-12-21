@@ -9,9 +9,6 @@ import org.slf4j.LoggerFactory;
 public class LoginPage extends SeleniumUtils {
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
 
     public void loginToTheApplication(String username, String password) {
         log.info("Logging in to the applications with username :: " + username + ", password :: " + password);

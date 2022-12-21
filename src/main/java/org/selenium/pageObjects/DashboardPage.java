@@ -13,10 +13,6 @@ import java.util.List;
 public class DashboardPage extends SeleniumUtils {
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    public DashboardPage(WebDriver driver) {
-        super(driver);
-    }
-
     public boolean isProductLogoDisplayed() {
         String text = getText(ObjectRepositoryUtils.getLocator("homePage.logo"));
         log.info("The text present on the logo is :: " + text);
