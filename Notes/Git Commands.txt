@@ -1,5 +1,5 @@
-git checkout -b "banch name" -- To create a new branch
-git add file1 file 2  -- To added multiple files for commiting
+git checkout -b "branch name" -- To create a new branch
+git add file1 file 2  -- To added multiple files for committing
 git add . -- To adding all the files to commit
 git restore file1 file2   -- To reset the file to previous version
 git restore .   --  To reset all the files to previous version
@@ -7,9 +7,9 @@ git commit -m "Commit message"  -- To commit the changes
 git commit --ammend -m "Test"   -- To update the commit message
 git push   --  To push the changes to remote repository
 git checkout branchname   -- To switch to different branch
-git fetch     -- To check if any new changes are present and they need to be pulled
+git fetch     -- To check if any new changes are present, and they need to be pulled
 git pull     -- To get the latest changes in to your local machine
-git merge targetBranchName  -- To merge two different branches
+git merge targetBranchName  -- To merge two different branch's
 git clone url   -- To clone the project into you local
 git status => It is used for checking what and all files are added for commit
 
@@ -21,4 +21,4 @@ git commit -m "OOPS concepts"  =>  To commit the added files and in =m you have 
 
 git push origin HEAD => Pushing the changes to central repository
 
-git pull origin HEAD => pulling the changes from central repository to loacl machine or repository
+git pull origin HEAD => pulling the changes from central repository to local machine or repository
